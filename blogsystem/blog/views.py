@@ -8,14 +8,17 @@ from .services.authentication import Authenticator
 
 
 class CategoryViewSet(viewsets.ModelViewSet):
+    permission_classes = [IsAuthenticated]
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
     
 class PostPhotoViewSet(viewsets.ModelViewSet):
+    permission_classes = [IsAuthenticated]
     queryset = PostPhoto.objects.all()
     serializer_class = PostPhotoSerializer
 
 class PostViewSet(viewsets.ModelViewSet):
+    permission_classes = [IsAuthenticated]
     queryset = Post.objects.all()
     serializer_class = PostSerializer
 
@@ -26,7 +29,7 @@ class LoginView(APIView):
         return auth.authenticate(serializer)
     
 class RegisterView(APIView):
-    # permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated]
     def post(self, request):
         serializer = UserRegisterSerializer(data=request.data)
         
