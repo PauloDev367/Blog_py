@@ -15,6 +15,7 @@ class PostSerializer(serializers.ModelSerializer):
             'id',
             'title',
             'post_text',
+            'author',
             'main_photo',
             'category'
         )
