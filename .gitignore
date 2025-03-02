@@ -1,5 +1,5 @@
 /.venv
 /.python-versions
 __pycache__/
-/veiculos/db.sqlite3
-/veiculos/uploads
+/blogsystem/db.sqlite3
+/blogsystem/uploads
